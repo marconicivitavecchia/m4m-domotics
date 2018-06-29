@@ -9,9 +9,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    
+    <!-- FONT AWESOME -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <title>Maker Faire</title>
 </head>
@@ -79,7 +81,6 @@
         z-index: 0;
     }
     .carousel-item {
-        /*   background-image: url("http://via.placeholder.com/1600x600"); */
         background-repeat: no-repeat;
         background-position: center;
         -ms-background-size: cover;
@@ -106,11 +107,57 @@
     /*--------- FINE CAROUSEL CSS ----------*/
 
     
+    /*--------- GO TO TOP ----------------*/
+    #return-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 100;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.7);
+        width: 50px;
+        height: 50px;
+        display: block;
+        text-decoration: none;
+        -webkit-border-radius: 35px;
+        -moz-border-radius: 35px;
+        border-radius: 35px;
+        display: none;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    #return-to-top i {
+        color: #fff;
+        margin: 0;
+        position: relative;
+        left: 16px;
+        top: 13px;
+        font-size: 19px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    #return-to-top:hover {
+        background: rgba(0, 0, 0, 0.9);
+    }
+    #return-to-top:hover i {
+        color: #fff;
+        top: 5px;
+    }
+    
     
     
 </style>
 
 <body>
+   <!-- RETURN TO TOP -->
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+   
     <!-- --------------------------------------------- NAVBAR --------------------------------------------- -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark pt-3">
         <a class="navbar-brand" href="#">
@@ -277,7 +324,7 @@ La potenza di questo modulo ha permesso di sviluppare un firmware che realizza s
     <footer class="container-fluid bg-dark">
         <div class="container py-5">
             <div class="row align-items-center">
-                <div class="col-md-6">Marconi Maker Faire for Domotica</div>
+                <div class="col-md-6">Marconi for MakerFaire Domotics</div>
                 <div class="col-md-6"><a href="https://www.iismarconicivitavecchia.gov.it/">https://www.iismarconicivitavecchia.gov.it/</a></div>
             </div>
         </div>
@@ -287,10 +334,37 @@ La potenza di questo modulo ha permesso di sviluppare un firmware che realizza s
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
+    <script type="text/javascript">
+        // Smooth scroll When Clicking Anchor
+        // @refer https://stackoverflow.com/a/7717572/8255629
+        var jQueryroot = $('html, body');
+        //$('a[href^="#"]').click(function () {
+        $('a.nav-link').click(function () {
+          jQueryroot.animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+          }, 1000);
+          return false;
+        });
+        
+        
+        // ===== Scroll to Top ==== 
+        $(window).scroll(function() {
+            if ($(this).scrollTop() >= 100) {        // If page is scrolled more than 50px
+                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+        $('#return-to-top').click(function() {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop : 0                       // Scroll to top of body
+            }, 500);
+        });
+    </script>
 
 </body>
 
