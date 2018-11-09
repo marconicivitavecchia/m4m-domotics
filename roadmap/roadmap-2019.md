@@ -6,18 +6,18 @@ Discussion about this topic is started in real-world and will continue here as p
 # Space requirements
 For MakerFaire 2019 we would like to ask for a larger space: a single slot 4x2m was too small for both domotics systems and VR. If we will have two slots, we may use a slot to recreate a small home (in scale), and the other slot for one or two VR locations.
 
-# Proposals
-The current project needs still some work to be stable and complete, but most of the job is done: a real domotics environment that can be controlled by both a web page and virtual reality. We need to agree about the direction we should move forward to and which features we should add.
-
-## Core technology
+# Core technology
 We should keep stick to our value proposition that is something like: an integrated system that blends together domotics and virtual reality.
 
 In other words, we should find the way to exploit the potential of controlling a real environment from the web and virtual reality. Although solutions as Augmented Reality or immersive pictures/videos can be powerful add-ons, should not become in the short-term the main target.
 
-## Target audience
+# Target audience
 We would like to keep addressing workers (eg. installation technicians) and/or general audience (eg. family) at the moment.
 
 We would like to avoid to specialize the project towards a pure security system (eg. anti-theft system) or for people with disability.
+
+# Proposals
+The current project needs still some work to be stable and complete, but most of the job is done: a real domotics environment that can be controlled by both a web page and virtual reality. We need to agree about the direction we should move forward to and which features we should add.
 
 ## Installation technicians
 This was the very first use case for this project, and we may stay on this track adding following features:
@@ -31,6 +31,12 @@ The technician can inspect and interact with the home remotely, to allow very fa
 ## Live webcams
 An important feature we would like to add is the stream from live webcams. Video can be displayed on both web panel and in VR. For VR, a 180° camera would be a better option.
 
+## Improved UI
+We should improve the current VR user interface to add the following features:
+- point with finger to interact with things
+- a floating panel over the wist for global interaction and other settings; panel may very similiar to the web page, to keep everything coherent and with the same look & feel.
+
+See [Interaction VR](https://unity3d.com/learn/tutorials/topics/virtual-reality/interaction-vr) and [User Interfaces for VR](https://unity3d.com/learn/tutorials/topics/virtual-reality/user-interfaces-vr)
 
 ## Integration with other home automation systems
 We should push integration with other systems like Google Home, Amazon Alexa or Apple Home. These technology are quite low-budget and easy to interface with, we could invest some money and time for their integration with potentially high returns.
