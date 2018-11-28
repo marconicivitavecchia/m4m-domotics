@@ -23,6 +23,10 @@ section {
     background-color: #eee;
 }
 
+.light-border {
+    border-bottom: 1px solid gray;
+}
+
 .navbar-dark .navbar-nav .nav-link::after {
     content: '';
     display: block;
@@ -81,6 +85,9 @@ footer .container {
 }    
 #fourth-slide {
     background-image: url(img/makerfaire-4.jpg);
+}   
+#fifth-slide {
+    background-image: url(img/makerfaire-5.jpg);
 }
 
 /*--------- FINE CAROUSEL CSS ----------*/
